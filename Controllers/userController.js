@@ -25,7 +25,6 @@ const createUser = async (req, res)=>{
         console.error(error)
     }
 }
-
 const login = async (req, res)=>{
     const {email, password} = req.body
     try {
