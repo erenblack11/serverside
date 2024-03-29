@@ -99,9 +99,9 @@ const updateNumbers = async (req, res) => {
 }
 const updateWords = async (req, res) => {
     const userId = req.params.userid
-    const words = req.body
+    const {words, data} = req.body
     try {
-        const editWords = await User.findByIdAndUpdate(userId, {words}, {new: true});
+        const editWords = await User.findByIdAndUpdate(userId, {words, data}, {new: true});
 
         if(!editWords) return res.status(404).json("The package is not found")
 
