@@ -7,6 +7,10 @@ const userRoutes = require('./Routes/userRoutes')
 
 app.use(cors());
 
+app.use((req, res, next) => {
+  res.setHeader('Content-Security-Policy', "default-src 'self' *;");
+  next();
+});
 
 app.use(fileUpload())
 
