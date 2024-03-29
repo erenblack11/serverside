@@ -16,10 +16,22 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    notion: {
-        type: Boolean
+    letters: {
+        type: Array
+    },
+    numbers: {
+        type: Array
+    },
+    words: {
+        type: Array
+    },
+    data: {
+        type: Object
+    },
+    score: {
+        type: Number
     }
-}, {collection: "accounts"})
+}, {collection: "users"})
 
 const User = mongoose.model('User', userSchema)
 
