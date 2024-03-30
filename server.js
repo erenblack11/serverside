@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path'); // Add this line
 const connectDB = require('./db/db');
 const fileUpload = require('express-fileupload')
 const app = express();
@@ -29,12 +30,12 @@ app.use("/user", userRoutes)
 // start server
 const port = 5000
 
-const start =async ()=> {
+const start = async () => {
     try {
-        await connectDB(process.env.MONGO_URI)
-        app.listen(port, ()=>{
-        console.log(`Server running on port ${port}`)
-    })
+        await connectDB(process.env.MONGO_URI || 'YOUR_MONGODB_URI_HERE') // Replace 'YOUR_MONGODB_URI_HERE' with your MongoDB URI
+        app.listen(port, () => {
+            console.log(`Server running on port ${port}`)
+        })
     } catch (error) {
         console.log(error)
     }
