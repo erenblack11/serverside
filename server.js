@@ -32,7 +32,7 @@ const port = 5000
 
 const start = async () => {
     try {
-        await connectDB(process.env.MONGO_URI || 'YOUR_MONGODB_URI_HERE') // Replace 'YOUR_MONGODB_URI_HERE' with your MongoDB URI
+        await connectDB(process.env.MONGO_URI) // Replace 'YOUR_MONGODB_URI_HERE' with your MongoDB URI
         app.listen(port, () => {
             console.log(`Server running on port ${port}`)
         })
