@@ -105,7 +105,7 @@ const updateWords = async (req, res) => {
 
         if(!editWords) return res.status(404).json("The package is not found")
 
-        res.status.send(editWords)
+        return res.status(200).send("success")
     } catch (error) {
         res.status(500).json(error);
     }
